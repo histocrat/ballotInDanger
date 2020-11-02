@@ -1,143 +1,157 @@
 <html>
+
 <head>
-<title>Is My Mail-In Ballot In Danger?</title>
-<link href="https://mincss.com/entireframework.min.css" rel="stylesheet" type="text/css" />
-<script type='text/javascript'>
+	<title>Is My Mail-In Ballot In Danger?</title>
+	<link href="https://mincss.com/entireframework.min.css" rel="stylesheet" type="text/css" />
+	<script type='text/javascript'>
 
-$data_by_state = {
+		$data_by_state = {
 
-	"Alabama": {"text": "You can check the status of your Alabama ballot by putting in your name and birthday <a href='https://myinfo.alabamavotes.gov/voterview'>here</a>. If it hasn't been received, the same site can give instructions on how to cast an in-person provisional ballot. Your mail-in ballot will be thrown out if it is not received by noon on election day even if you mailed it in on time."},
-	"Alaska": {"text": "You can check the status of your Alaska ballot by putting in your name <a href='https://myvoterinformation.alaska.gov/'>here</a>. If it hasn't been accepted, you are allowed to vote in person instead. If your ballot is not received by November 13th, it will be thrown out even if you mailed it on time. Even if it is received in time but after election day, it's still vulnerable to being thrown out by a bad court decision."},
-	"Arizona": {"text": "You can check the status of your Arizona ballot by putting in your name, birthday, and voter id <a href='https://my.arizona.vote/AbsenteeTracker.aspx'>here</a>. If it hasn't been accepted, you can find instructions on casting an in-person provisional ballot <a href='https://my.arizona.vote/WhereToVote.aspx?s=address'>here.</a> If your ballot is not received by 7:00 PM on election day, it will be thrown out even if you mailed it on time."},
-	"Arkansas": {"text": "You can check the status of your Arkansas ballot by putting in your name and birthday <a href='https://www.voterview.ar-nova.org/VoterView'>here</a>. If it hasn't been received, the same site can give instructions on how to cast an in-person provisional ballot. Your mail-in ballot will be thrown out if it is not received by 7:30 PM on election day, even if you mailed it in on time."},
-	"California": {"text": "You can check the status of your California ballot by putting in your name and birthday <a href='https://california.ballottrax.net/voter/'>here</a>. If it hasn't been received, you can find instructions on casting an in-person provisional ballot <a href='https://voterstatus.sos.ca.gov/'>here.</a> Your mail-in ballot will be thrown out if it is not received by November 20th, even if you mailed it in on time, and even if it is received in time but after election day, it's still vulnerable to being thrown out by a bad court decision."},
-	"Colorado": {"text": "You can check the status of your Colorado ballot by putting in your name and birthday <a href='https://colorado.ballottrax.net/voter/'>here</a>. If it hasn't been received, you can cast a normal in-person vote. Find your polling place <a href='https://www.sos.state.co.us/pubs/elections/VIP.html'>here.</a> Your mail-in ballot will be thrown out if it is not received by 7:00 PM on election day, even if you mailed it in on time."},
-	"Connecticut": {"text": "You can check the status of your Connecticut ballot by putting in your name and birthday <a href='https://portaldir.ct.gov/sots/LookUp.aspx'>here</a>. If it hasn't been received, contact your <a href='https://portal.ct.gov/-/media/SOTS/ElectionServices/Town-Clerk/Town-Clerks-List.pdf'>town clerk</a> for instructions on how to get your vote to count. A mail-in ballot received after election day will be thrown out no matter when you mailed it."},
-	"Delaware": {"text": "You can check the status of your Delaware ballot by putting in your name, birthday, and driver's license or state ID number <a href='https://ivote.de.gov/VoterView'>here</a>. If it hasn't been received, you can cast a normal in-person vote, and the same site will help you find your polling place.  Your mail-in ballot will be thrown out if it is not received by 8:00 PM on election day, even if you mailed it in on time."},
-	"Florida": {"text": "You can check the status of your Florida ballot by putting in your name and birthday <a href='https://registration.elections.myflorida.com/CheckVoterStatus'>here</a>. If it hasn't been received, the same site can give instructions on how to cast an in-person provisional ballot. Your mail-in ballot will be thrown out if it is not received by 7:00 PM on election day even if you mailed it in on time."},
-	"Georgia": {"text": "You can check the status of your Georgia ballot by putting in your name and birthday <a href='https://www.mvp.sos.ga.gov/MVP/mvp.do'>here</a>. If it hasn't been received, contact your <a href='https://elections.sos.ga.gov/Elections/countyregistrars.do'>country registrar</a> for instructions on how to get your vote to count. Your mail-in ballot will be thrown out if it is not received by 7:00 PM on election day, even if you mailed it in on time."},
-	"Hawaii": {"text": "You can check the status of your Hawaii ballot by putting in your social security number and driver's license or state ID <a href='https://ballotstatus.hawaii.gov/Default'>here</a>. If it has not been received, follow the instructions on the site or contact your county elections office. Your mail-in ballot will be thrown out if it is not received by 7:00 PM on election day, even if you mailed it in on time." },
-	"Idaho": {"text": "You can check the status of your Idaho ballot by putting in your name and birthday <a href='https://elections.sos.idaho.gov/ElectionLink/ElectionLink/VoterSearch.aspx'>here</a>. If it hasn't been received, follow the instructions on the site, or you may be able to cast a provisional ballot in person. Your mail-in ballot will be thrown out if it is not received by 7:00 PM on election day, even if you mailed it in on time."},
-	"Illinois": {"text": "You will need to <a href='https://www.elections.il.gov/ElectionOperations/ElectionAuthorities.aspx'>call your county directly</a> in most cases."},
-	"Indiana": {"text": "You can check the status of your Indiana ballot by putting in your name and birthday <a href='https://indianavoters.in.gov/'>here</a>. If it hasn't been received, follow the instructions on the site, or get them from <a href='https://indianavoters.in.gov/CountyContact/Index'>your county election board</a>, to get the form needed to cast your vote in person. Your mail-in ballot will be thrown out if it is not received by election day, even if you mailed it in on time."},
-	"Iowa": {"text": "You can check the status of your Iowa ballot by putting in your name and birthday <a href='https://sos.iowa.gov/elections/absenteeballotstatus/absentee/search'>here</a>. If it hasn't been received, you can cast an in-person provisional ballot. You can find your 2020 polling place <a href='https://sos.iowa.gov/elections/voterreg/pollingplace/search.aspx'>here</a>. Your mail-in ballot will be thrown out if it is received after Nobember 9th, even if you mailed it in on time, and even if it is received in time but after election day, it's still vulnerable to being thrown out by a bad court decision."},
-	"Kansas": {"text": "You can check the status of your Kansas ballot by putting in your name and birthday <a href='https://myvoteinfo.voteks.org/voterview/'>here</a>. If it hasn't been received, the same site can give instructions on how to cast an in-person provisional ballot. Your mail-in ballot will be thrown out if it is not received by November 6th, even if you mailed it in on time, and even if it is received in time but after election day, it's still vulnerable to being thrown out by a bad court decision."},
-	"Kentucky": {"text": "You can check the status of your Kentucky ballot by putting in your name, birthday, and social security number <a href='https://vrsws.sos.ky.gov/VIC/'>here</a>. If it hasn't been received, <a href='https://drive.ky.gov/Pages/County-clerks.aspx'>contact your county clerk.</a> Your mail-in ballot will be thrown out if it is not received by November 6th, even if you mailed it in on time, and even if it is received in time but after election day, it's still vulnerable to being thrown out by a bad court decision."},
-	"Louisiana": {"text": "You can check the status of your Louisiana ballot by putting in your name and birthday <a href='https://voterportal.sos.la.gov/Home/VoterLogin'>here</a>. If it hasn't been received, <a href='https://voterportal.sos.la.gov/registrar'>contact your registrar of voters.</a> Your mail-in ballot will be thrown out if it is not received by November 2nd, the day before election day, at 4:30 PM, even if you mailed it in on time."},
-	"Maine": {"text": "You can check the status of your Maine ballot by putting in your name and birthday <a href='https://apps.web.maine.gov/cgi-bin/online/AbsenteeBallot/ballot_status.pl'>here</a>. If it hasn't been received, contact cec.elections@maine.gov for instructions on how to get your vote counted. Your mail-in ballot will be thrown out if it is not received by 8:00 PM on election day, even if you mailed it in on time."},
-	"Maryland": {"text": "You can check the status of your Maryland ballot by putting in your name and birthday <a href='https://voterservices.elections.maryland.gov/VoterSearch'>here</a>. If it hasn't been received, you can cast an in-person provisional ballot. The same site will have instructions. Your mail-in ballot will be thrown out if it is not received by November 13th, even if you mailed it in on time, and even if it is received in time but after election day, it's still vulnerable to being thrown out by a bad court decision."},
-	"Massachusetts": {"text": "You can check the status of your Massachusetts ballot by putting in your name and address <a href='https://www.sec.state.ma.us/wheredoivotema/track/trackmyballot.aspx'>here</a>. If it hasn't been received, you can cast an <a href='https://www.sec.state.ma.us/wheredoivotema/bal/MyElectionInfo.aspx'>in-person ballot</a>. Your mail-in ballot will be thrown out if it is not received by November 6th, even if you mailed it in on time, and even if it is received in time but after election day, it's still vulnerable to being thrown out by a bad court decision."},
-	"Michigan":  {"text": "You can check the status of your Michigan ballot by putting in your name and birthday <a href='https://mvic.sos.state.mi.us/Voter/Index'>here</a>. If it hasn't been received, you can cast an <a href='https://mvic.sos.state.mi.us/Voter/Index'>in-person ballot</a> by signing an extra statement at the polling place. Your mail-in ballot will be thrown out if it is not received by election day, even if you mailed it in on time."},
-	"Minnesota":  {"text": "You can check the status of your Minnesota ballot by putting in your name, birthday, and driver's license or state ID number <a href='https://mnvotes.sos.state.mn.us/AbsenteeBallotStatus.aspx'>here</a>. If it hasn't been received, you can cast an <a href='https://pollfinder.sos.state.mn.us/'>in-person ballot</a>. Your mail-in ballot risks being thrown out if it is not received by election day, even if you mailed it in on time."},
-	"Montana": {"text": "See <a href='https://app.mt.gov/voterinfo/'>here</a> for information for your county."},
-	"Mississippi":  {"text": "You can check the status of your Mississippi ballot, and make sure that it's counted, by following the instructions at <a href='https://www.msegov.com/sos/voter_registration/AmIRegistered'>Y'all Vote</a>."},
-	"Missouri":  {"text": "You likely can't check the status of your mail-in ballot. <a href='https://www.sos.mo.gov/elections/goVoteMissouri/localelectionauthority'>Contact your local election authority.</a> Your mail-in ballot will be thrown out if it is not received by election day even if you mailed it in on time."},
-	"Nebraska": {"text": "You can check the status of your Nebraska ballot by putting in your name and birthday <a href='https://myinfo.alabamavotes.gov/voterview'>here</a>. If it hasn't been received, the same site can give instructions on how to cast an in-person provisional ballot. Your mail-in ballot will be thrown out if it is not received by election day even if you mailed it in on time."},
-	"Nevada": {"text": "You can check the status of your Nevada ballot by putting in your name, birthday, social security number, and driver's license or state ID number <a href='https://www.nvsos.gov/votersearch/'>here</a>. If it hasn't been received, the same site will give on instructions on how to cast a regular ballot in person, along with a signed statement about your mail-in ballot. Your mail-in ballot will be thrown out if it is not received by November 10th, even if you mailed it in on time, and even if it is received in time but after election day, it's still vulnerable to being thrown out by a bad court decision."},
-	"New Hampshire": {"text": "You can check the status of your New Hampshire ballot by putting in your name and birthday <a href='https://app.sos.nh.gov/Public/AbsenteeBallot.aspx'>here</a>. If it hasn't been received, contact your <a href='https://app.sos.nh.gov/Public/ClerkDetails.aspx'>town clerk</a> for instructions on how to get your vote to count. A mail-in ballot received after election day will be thrown out even if you mailed it in on time."},
-	"New Jersey": {"text": "You can check the status of your New Jersey ballot <a href='https://www.nj.gov/state/elections/vote-track-my-ballot.shtml'>here.</a> If it has not been received, the same site will give instructions on how to cast an in-person provisional ballot."},
-	"New Mexico": {"text": "You can check the status of your New Mexico ballot by putting in your name and birthday <a href='https://voterportal.servis.sos.state.nm.us/WhereToVote.aspx?tab=AbsenteeTracker&AspxAutoDetectCookieSupport=1'>here</a>. If it hasn't been received, you can <a href='https://voterportal.servis.sos.state.nm.us/WhereToVoteAddress.aspx'>cast an in-person ballot</a> by signing an extra statement at the polling place. A mail-in ballot received after election day will be thrown out even if you mailed it in on time."},
-	"New York": {"text": "You can check the status of your New York City ballot <a href='https://nycabsentee.com/tracking'>here</a>. Voters registered outside New York City see <a href='https://nysballot.elections.ny.gov/TrackMyBallot/Search'>here.</a> If your ballot has not been received, you can vote in person. Your mail-in ballot will be thrown out if it is not received by November 10th, even if you mailed it in on time, and even if it is received in time but after election day, it's still vulnerable to being thrown out by a bad court decision."},
-	"North Carolina": {"text": "You can check the status of your North Carolina ballot by putting in your name and birthday <a href='https://northcarolina.ballottrax.net/voter/'>here</a>. If it hasn't been received, <a href='https://www.ncsbe.gov/about-elections/county-boards-elections'>contact your County Board of Elections</a>. Your mail-in ballot will be thrown out if it is not received by November 10th, even if you mailed it in on time, and even if it is received in time but after election day, it's still vulnerable to being thrown out by a bad court decision."},
-	"North Dakota": {"text": "You can check the status of your North Dakota ballot by putting in your name and birthday <a href='https://vip.sos.nd.gov/AbsenteeTracker.aspx'>here</a>. If it hasn't been received, follow instructions on the site or <a href='https://vip.sos.nd.gov/CountyAuditors.aspx'>contact your county elections officials</a>. Your mail-in ballot is at risk of being thrown out by a bad court decision."},
-	"Ohio": {"text": "You can check the status of your Ohio ballot <a href='https://www.sos.state.oh.us/elections/voters/toolkit/ballot-tracking/'>here</a>. If it hasn't been received, you can <a href='https://www.ohiosos.gov/elections/voters/toolkit/polling-location/'>cast an in-person provisional ballot</a>. Your mail-in ballot will be thrown out if it is not received by November 13th, even if you mailed it in on time, and even if it is received in time but after election day, it's still vulnerable to being thrown out by a bad court decision."},
-	"Oklahoma": {"text": "You can check the status of your Oklahoma ballot <a href='https://okvoterportal.okelections.us/'>here</a>. If it hasn't been received, follow instructions on the site or <a href='https://www.ok.gov/elections/County_Election_Board_Email_Addresses.html'>email your county election board</a>. Your mail-in ballot will be thrown out if it is not received by election day, even if you mailed it in on time."},
-	"Oregon": {"text": "Okay, Oregon always votes by mail, you're probably fine. But you can check on your ballot <a href='https://secure.sos.state.or.us/orestar/vr/showVoterSearch.do'>here</a>."},
-	"Pennsylvania": {"text": "You can check the status of your Pennsylvania ballot by putting in your name and birthday <a href='https://www.pavoterservices.pa.gov/pages/ballottracking.aspx'>here</a>. If it hasn't been received, you can likely <a href='https://www.pavoterservices.pa.gov/pages/pollingplaceinfo.aspx'>cast an in-person provisional ballot</a> by signing an extra statement at the polling place, but you may want to check with your county board of elections first. Your mail-in ballot will be thrown out if it is not received by November 6th, even if you mailed it in on time, and even if it is received in time but after election day, it's still vulnerable to being thrown out by a bad court decision."},
-	"Rhode Island": {"text": "You can check the status of your Rhode Island ballot by putting in your name and birthday <a href='https://vote.sos.ri.gov/Home/UpdateVoterRecord?ActiveFlag=3'>here</a>. If it hasn't been received, you can  <a href='https://vote.sos.ri.gov/Home/PollingPlaces?ActiveFlag=2'>cast an in-person provisional ballot</a>. Your mail-in ballot will be thrown out if it is not received by election day, even if you mailed it in on time."},
-	"South Carolina": {"text": "You can check the status of your South Carolina ballot by putting in your name, birthday, and social security number <a href='https://info.scvotes.sc.gov/eng/voterinquiry/VoterInformationRequest.aspx?PageMode=AbsenteeInfo'>here</a>. If it hasn't been received, follow instructions on the site."},
-	"South Dakota": {"text": "You can check the status of your South Dakota ballot by putting in your name and birthday <a href='https://vip.sdsos.gov/VIPLogin.aspx'>here</a>. If it hasn't been received, follow instructions on the site or <a href='https://absentee.vote411.org/vote/eoddomestic.htm?_ga=2.187150123.2022262771.1604283993-780520690.1604283993'>contact your local county clerk</a>."},
-	"Tennessee": {"text": "You can check the status of your Tennessee ballot by putting in your name and birthday <a href='https://tnmap.tn.gov/voterlookup/'>here</a>. If it hasn't been received, the same site will tell you where to cast an in-person provisional ballot. If your ballot is not received by election day, it will be thrown out, even if you mailed it in on time."},
-	"Texas": {"text": "You are at severe risk of having your ballot thrown out by a bad court decision even if it was accepted. You can cast an in-person provisional ballot following the instructions <a href='https://teamrv-mvp.sos.texas.gov/MVP/mvp.do'>here</a>."},
-	"Utah": {"text": "You can check the status of your Utah ballot by putting in your name, birthday, and address <a href='https://votesearch.utah.gov/voter-search/search/search-by-voter/track-mail-ballot'>here</a>. If it hasn't been received, follow instructions on the site or <a href='https://voteinfo.utah.gov/county-clerk-contact-information/'>contact your local county clerk</a>. Your ballot is vulnerable to being thrown out by a bad court decision."},
-	"Vermont": {"text": "You can check the status of your Vermont ballot by putting in your name, birthday, and ID or social security number <a href='https://mvp.vermont.gov/'>here</a>. If it hasn't been received, follow instructions on the site. Your mail-in ballot will be thrown out if it is not received by election day, even if you mailed it in on time."},
-	"Virginia": {"text": "You can check the status of your Virginia ballot by putting in your name, birthday, and mailing address <a href='https://ballotscout.org/partners/5a8f1161-23a0-4fa0-8ec9-3e090e97e9b3/va-search'>here</a>. If it hasn't been received, follow instructions on the site.  Your mail-in ballot will be thrown out if it is not received by November 6th, even if you mailed it in on time, and even if it is received in time but after election day, it's still vulnerable to being thrown out by a bad court decision."},
-	"Washington": {"text": "Okay, Washington always votes by mail, you're probably fine. But you can check on your ballot <a href='https://voter.votewa.gov/WhereToVote.aspx'>here</a>."},
-	"District Of Columbia": {"text": "You can check the status of your D.C. ballot by putting in your name and birthday <a href='https://www.dcboe.org/Voters/Absentee-Voting/Track-Absentee-Ballot'>here</a>. If it hasn't been received, you can cast an in-person provisional ballot at your <a href='https://dcgis.maps.arcgis.com/apps/instant/nearby/index.html?appid=763576faa0b1470ca0559c377cf3b497'>polling place.</a> Your mail-in ballot will be thrown out if it is not received by November 13th, even if you mailed it in on time, and even if it is received in time but after election day, it's still vulnerable to being thrown out by a bad court decision."},
-	"West Virginia": {"text": "You can check the status of your West Virginia ballot by putting in your name and birthday <a href='https://services.sos.wv.gov/Elections/Voter/AbsenteeBallotTracking'>here</a>. If it hasn't been received, you can cast an in-person provisional ballot at your <a href='https://services.sos.wv.gov/Elections/Voter/FindMyPollingPlace'>polling place.</a> Your mail-in ballot will be thrown out if it is not received by November 9th, even if you mailed it in on time, and even if it is received in time but after election day, it's still vulnerable to being thrown out by a bad court decision."},
-	"Wisconsin": {"text": "You can check the status of your Wisconsin ballot by putting in your name and birthday <a href='https://myvote.wi.gov/en-us/TrackMyBallot'>here</a>. If it hasn't been received, follow instructions on the site. Your mail-in ballot will be thrown out if it is not received by election day, even if you mailed it in on time."},
-	"Wyoming": {"text": "Contact your <a href='https://sos.wyo.gov/Elections/Docs/WYCountyClerks_AbsRequest_VRChange.pdf'>local county clerk</a>. If you are concerned, you can cast an in-person provisional ballot <a href='https://sos.wyo.gov/elections/pollplace/default.aspx'>at your polling place</a>. Your mail-in ballot will be thrown out if it is not received by election day, even if you mailed it in on time."},
-	
-	
-}
+			"Alabama": { "text": "You can check the status of your Alabama ballot by putting in your name and birthday <a href='https://myinfo.alabamavotes.gov/voterview'>here</a>. If it hasn't been received, the same site can give instructions on how to cast an in-person provisional ballot. Your mail-in ballot will be thrown out if it is not received by noon on election day even if you mailed it in on time." },
+			"Alaska": { "text": "You can check the status of your Alaska ballot by putting in your name <a href='https://myvoterinformation.alaska.gov/'>here</a>. If it hasn't been accepted, you are allowed to vote in person instead. If your ballot is not received by November 13th, it will be thrown out even if you mailed it on time. Even if it is received in time but after election day, it's still vulnerable to being thrown out by a bad court decision." },
+			"Arizona": { "text": "You can check the status of your Arizona ballot by putting in your name, birthday, and voter id <a href='https://my.arizona.vote/AbsenteeTracker.aspx'>here</a>. If it hasn't been accepted, you can find instructions on casting an in-person provisional ballot <a href='https://my.arizona.vote/WhereToVote.aspx?s=address'>here.</a> If your ballot is not received by 7:00 PM on election day, it will be thrown out even if you mailed it on time." },
+			"Arkansas": { "text": "You can check the status of your Arkansas ballot by putting in your name and birthday <a href='https://www.voterview.ar-nova.org/VoterView'>here</a>. If it hasn't been received, the same site can give instructions on how to cast an in-person provisional ballot. Your mail-in ballot will be thrown out if it is not received by 7:30 PM on election day, even if you mailed it in on time." },
+			"California": { "text": "You can check the status of your California ballot by putting in your name and birthday <a href='https://california.ballottrax.net/voter/'>here</a>. If it hasn't been received, you can find instructions on casting an in-person provisional ballot <a href='https://voterstatus.sos.ca.gov/'>here.</a> Your mail-in ballot will be thrown out if it is not received by November 20th, even if you mailed it in on time, and even if it is received in time but after election day, it's still vulnerable to being thrown out by a bad court decision." },
+			"Colorado": { "text": "You can check the status of your Colorado ballot by putting in your name and birthday <a href='https://colorado.ballottrax.net/voter/'>here</a>. If it hasn't been received, you can cast a normal in-person vote. Find your polling place <a href='https://www.sos.state.co.us/pubs/elections/VIP.html'>here.</a> Your mail-in ballot will be thrown out if it is not received by 7:00 PM on election day, even if you mailed it in on time." },
+			"Connecticut": { "text": "You can check the status of your Connecticut ballot by putting in your name and birthday <a href='https://portaldir.ct.gov/sots/LookUp.aspx'>here</a>. If it hasn't been received, contact your <a href='https://portal.ct.gov/-/media/SOTS/ElectionServices/Town-Clerk/Town-Clerks-List.pdf'>town clerk</a> for instructions on how to get your vote to count. A mail-in ballot received after election day will be thrown out no matter when you mailed it." },
+			"Delaware": { "text": "You can check the status of your Delaware ballot by putting in your name, birthday, and driver's license or state ID number <a href='https://ivote.de.gov/VoterView'>here</a>. If it hasn't been received, you can cast a normal in-person vote, and the same site will help you find your polling place.  Your mail-in ballot will be thrown out if it is not received by 8:00 PM on election day, even if you mailed it in on time." },
+			"Florida": { "text": "You can check the status of your Florida ballot by putting in your name and birthday <a href='https://registration.elections.myflorida.com/CheckVoterStatus'>here</a>. If it hasn't been received, the same site can give instructions on how to cast an in-person provisional ballot. Your mail-in ballot will be thrown out if it is not received by 7:00 PM on election day even if you mailed it in on time." },
+			"Georgia": { "text": "You can check the status of your Georgia ballot by putting in your name and birthday <a href='https://www.mvp.sos.ga.gov/MVP/mvp.do'>here</a>. If it hasn't been received, contact your <a href='https://elections.sos.ga.gov/Elections/countyregistrars.do'>country registrar</a> for instructions on how to get your vote to count. Your mail-in ballot will be thrown out if it is not received by 7:00 PM on election day, even if you mailed it in on time." },
+			"Hawaii": { "text": "You can check the status of your Hawaii ballot by putting in your social security number and driver's license or state ID <a href='https://ballotstatus.hawaii.gov/Default'>here</a>. If it has not been received, follow the instructions on the site or contact your county elections office. Your mail-in ballot will be thrown out if it is not received by 7:00 PM on election day, even if you mailed it in on time." },
+			"Idaho": { "text": "You can check the status of your Idaho ballot by putting in your name and birthday <a href='https://elections.sos.idaho.gov/ElectionLink/ElectionLink/VoterSearch.aspx'>here</a>. If it hasn't been received, follow the instructions on the site, or you may be able to cast a provisional ballot in person. Your mail-in ballot will be thrown out if it is not received by 7:00 PM on election day, even if you mailed it in on time." },
+			"Illinois": { "text": "You will need to <a href='https://www.elections.il.gov/ElectionOperations/ElectionAuthorities.aspx'>call your county directly</a> in most cases." },
+			"Indiana": { "text": "You can check the status of your Indiana ballot by putting in your name and birthday <a href='https://indianavoters.in.gov/'>here</a>. If it hasn't been received, follow the instructions on the site, or get them from <a href='https://indianavoters.in.gov/CountyContact/Index'>your county election board</a>, to get the form needed to cast your vote in person. Your mail-in ballot will be thrown out if it is not received by election day, even if you mailed it in on time." },
+			"Iowa": { "text": "You can check the status of your Iowa ballot by putting in your name and birthday <a href='https://sos.iowa.gov/elections/absenteeballotstatus/absentee/search'>here</a>. If it hasn't been received, you can cast an in-person provisional ballot. You can find your 2020 polling place <a href='https://sos.iowa.gov/elections/voterreg/pollingplace/search.aspx'>here</a>. Your mail-in ballot will be thrown out if it is received after Nobember 9th, even if you mailed it in on time, and even if it is received in time but after election day, it's still vulnerable to being thrown out by a bad court decision." },
+			"Kansas": { "text": "You can check the status of your Kansas ballot by putting in your name and birthday <a href='https://myvoteinfo.voteks.org/voterview/'>here</a>. If it hasn't been received, the same site can give instructions on how to cast an in-person provisional ballot. Your mail-in ballot will be thrown out if it is not received by November 6th, even if you mailed it in on time, and even if it is received in time but after election day, it's still vulnerable to being thrown out by a bad court decision." },
+			"Kentucky": { "text": "You can check the status of your Kentucky ballot by putting in your name, birthday, and social security number <a href='https://vrsws.sos.ky.gov/VIC/'>here</a>. If it hasn't been received, <a href='https://drive.ky.gov/Pages/County-clerks.aspx'>contact your county clerk.</a> Your mail-in ballot will be thrown out if it is not received by November 6th, even if you mailed it in on time, and even if it is received in time but after election day, it's still vulnerable to being thrown out by a bad court decision." },
+			"Louisiana": { "text": "You can check the status of your Louisiana ballot by putting in your name and birthday <a href='https://voterportal.sos.la.gov/Home/VoterLogin'>here</a>. If it hasn't been received, <a href='https://voterportal.sos.la.gov/registrar'>contact your registrar of voters.</a> Your mail-in ballot will be thrown out if it is not received by November 2nd, the day before election day, at 4:30 PM, even if you mailed it in on time." },
+			"Maine": { "text": "You can check the status of your Maine ballot by putting in your name and birthday <a href='https://apps.web.maine.gov/cgi-bin/online/AbsenteeBallot/ballot_status.pl'>here</a>. If it hasn't been received, contact cec.elections@maine.gov for instructions on how to get your vote counted. Your mail-in ballot will be thrown out if it is not received by 8:00 PM on election day, even if you mailed it in on time." },
+			"Maryland": { "text": "You can check the status of your Maryland ballot by putting in your name and birthday <a href='https://voterservices.elections.maryland.gov/VoterSearch'>here</a>. If it hasn't been received, you can cast an in-person provisional ballot. The same site will have instructions. Your mail-in ballot will be thrown out if it is not received by November 13th, even if you mailed it in on time, and even if it is received in time but after election day, it's still vulnerable to being thrown out by a bad court decision." },
+			"Massachusetts": { "text": "You can check the status of your Massachusetts ballot by putting in your name and address <a href='https://www.sec.state.ma.us/wheredoivotema/track/trackmyballot.aspx'>here</a>. If it hasn't been received, you can cast an <a href='https://www.sec.state.ma.us/wheredoivotema/bal/MyElectionInfo.aspx'>in-person ballot</a>. Your mail-in ballot will be thrown out if it is not received by November 6th, even if you mailed it in on time, and even if it is received in time but after election day, it's still vulnerable to being thrown out by a bad court decision." },
+			"Michigan": { "text": "You can check the status of your Michigan ballot by putting in your name and birthday <a href='https://mvic.sos.state.mi.us/Voter/Index'>here</a>. If it hasn't been received, you can cast an <a href='https://mvic.sos.state.mi.us/Voter/Index'>in-person ballot</a> by signing an extra statement at the polling place. Your mail-in ballot will be thrown out if it is not received by election day, even if you mailed it in on time." },
+			"Minnesota": { "text": "You can check the status of your Minnesota ballot by putting in your name, birthday, and driver's license or state ID number <a href='https://mnvotes.sos.state.mn.us/AbsenteeBallotStatus.aspx'>here</a>. If it hasn't been received, you can cast an <a href='https://pollfinder.sos.state.mn.us/'>in-person ballot</a>. Your mail-in ballot risks being thrown out if it is not received by election day, even if you mailed it in on time." },
+			"Montana": { "text": "See <a href='https://app.mt.gov/voterinfo/'>here</a> for information for your county." },
+			"Mississippi": { "text": "You can check the status of your Mississippi ballot, and make sure that it's counted, by following the instructions at <a href='https://www.msegov.com/sos/voter_registration/AmIRegistered'>Y'all Vote</a>." },
+			"Missouri": { "text": "You likely can't check the status of your mail-in ballot. <a href='https://www.sos.mo.gov/elections/goVoteMissouri/localelectionauthority'>Contact your local election authority.</a> Your mail-in ballot will be thrown out if it is not received by election day even if you mailed it in on time." },
+			"Nebraska": { "text": "You can check the status of your Nebraska ballot by putting in your name and birthday <a href='https://myinfo.alabamavotes.gov/voterview'>here</a>. If it hasn't been received, the same site can give instructions on how to cast an in-person provisional ballot. Your mail-in ballot will be thrown out if it is not received by election day even if you mailed it in on time." },
+			"Nevada": { "text": "You can check the status of your Nevada ballot by putting in your name, birthday, social security number, and driver's license or state ID number <a href='https://www.nvsos.gov/votersearch/'>here</a>. If it hasn't been received, the same site will give on instructions on how to cast a regular ballot in person, along with a signed statement about your mail-in ballot. Your mail-in ballot will be thrown out if it is not received by November 10th, even if you mailed it in on time, and even if it is received in time but after election day, it's still vulnerable to being thrown out by a bad court decision." },
+			"New Hampshire": { "text": "You can check the status of your New Hampshire ballot by putting in your name and birthday <a href='https://app.sos.nh.gov/Public/AbsenteeBallot.aspx'>here</a>. If it hasn't been received, contact your <a href='https://app.sos.nh.gov/Public/ClerkDetails.aspx'>town clerk</a> for instructions on how to get your vote to count. A mail-in ballot received after election day will be thrown out even if you mailed it in on time." },
+			"New Jersey": { "text": "You can check the status of your New Jersey ballot <a href='https://www.nj.gov/state/elections/vote-track-my-ballot.shtml'>here.</a> If it has not been received, the same site will give instructions on how to cast an in-person provisional ballot." },
+			"New Mexico": { "text": "You can check the status of your New Mexico ballot by putting in your name and birthday <a href='https://voterportal.servis.sos.state.nm.us/WhereToVote.aspx?tab=AbsenteeTracker&AspxAutoDetectCookieSupport=1'>here</a>. If it hasn't been received, you can <a href='https://voterportal.servis.sos.state.nm.us/WhereToVoteAddress.aspx'>cast an in-person ballot</a> by signing an extra statement at the polling place. A mail-in ballot received after election day will be thrown out even if you mailed it in on time." },
+			"New York": { "text": "You can check the status of your New York City ballot <a href='https://nycabsentee.com/tracking'>here</a>. Voters registered outside New York City see <a href='https://nysballot.elections.ny.gov/TrackMyBallot/Search'>here.</a> If your ballot has not been received, you can vote in person. Your mail-in ballot will be thrown out if it is not received by November 10th, even if you mailed it in on time, and even if it is received in time but after election day, it's still vulnerable to being thrown out by a bad court decision." },
+			"North Carolina": { "text": "You can check the status of your North Carolina ballot by putting in your name and birthday <a href='https://northcarolina.ballottrax.net/voter/'>here</a>. If it hasn't been received, <a href='https://www.ncsbe.gov/about-elections/county-boards-elections'>contact your County Board of Elections</a>. Your mail-in ballot will be thrown out if it is not received by November 10th, even if you mailed it in on time, and even if it is received in time but after election day, it's still vulnerable to being thrown out by a bad court decision." },
+			"North Dakota": { "text": "You can check the status of your North Dakota ballot by putting in your name and birthday <a href='https://vip.sos.nd.gov/AbsenteeTracker.aspx'>here</a>. If it hasn't been received, follow instructions on the site or <a href='https://vip.sos.nd.gov/CountyAuditors.aspx'>contact your county elections officials</a>. Your mail-in ballot is at risk of being thrown out by a bad court decision." },
+			"Ohio": { "text": "You can check the status of your Ohio ballot <a href='https://www.sos.state.oh.us/elections/voters/toolkit/ballot-tracking/'>here</a>. If it hasn't been received, you can <a href='https://www.ohiosos.gov/elections/voters/toolkit/polling-location/'>cast an in-person provisional ballot</a>. Your mail-in ballot will be thrown out if it is not received by November 13th, even if you mailed it in on time, and even if it is received in time but after election day, it's still vulnerable to being thrown out by a bad court decision." },
+			"Oklahoma": { "text": "You can check the status of your Oklahoma ballot <a href='https://okvoterportal.okelections.us/'>here</a>. If it hasn't been received, follow instructions on the site or <a href='https://www.ok.gov/elections/County_Election_Board_Email_Addresses.html'>email your county election board</a>. Your mail-in ballot will be thrown out if it is not received by election day, even if you mailed it in on time." },
+			"Oregon": { "text": "Okay, Oregon always votes by mail, you're probably fine. But you can check on your ballot <a href='https://secure.sos.state.or.us/orestar/vr/showVoterSearch.do'>here</a>." },
+			"Pennsylvania": { "text": "You can check the status of your Pennsylvania ballot by putting in your name and birthday <a href='https://www.pavoterservices.pa.gov/pages/ballottracking.aspx'>here</a>. If it hasn't been received, you can likely <a href='https://www.pavoterservices.pa.gov/pages/pollingplaceinfo.aspx'>cast an in-person provisional ballot</a> by signing an extra statement at the polling place, but you may want to check with your county board of elections first. Your mail-in ballot will be thrown out if it is not received by November 6th, even if you mailed it in on time, and even if it is received in time but after election day, it's still vulnerable to being thrown out by a bad court decision." },
+			"Rhode Island": { "text": "You can check the status of your Rhode Island ballot by putting in your name and birthday <a href='https://vote.sos.ri.gov/Home/UpdateVoterRecord?ActiveFlag=3'>here</a>. If it hasn't been received, you can  <a href='https://vote.sos.ri.gov/Home/PollingPlaces?ActiveFlag=2'>cast an in-person provisional ballot</a>. Your mail-in ballot will be thrown out if it is not received by election day, even if you mailed it in on time." },
+			"South Carolina": { "text": "You can check the status of your South Carolina ballot by putting in your name, birthday, and social security number <a href='https://info.scvotes.sc.gov/eng/voterinquiry/VoterInformationRequest.aspx?PageMode=AbsenteeInfo'>here</a>. If it hasn't been received, follow instructions on the site." },
+			"South Dakota": { "text": "You can check the status of your South Dakota ballot by putting in your name and birthday <a href='https://vip.sdsos.gov/VIPLogin.aspx'>here</a>. If it hasn't been received, follow instructions on the site or <a href='https://absentee.vote411.org/vote/eoddomestic.htm?_ga=2.187150123.2022262771.1604283993-780520690.1604283993'>contact your local county clerk</a>." },
+			"Tennessee": { "text": "You can check the status of your Tennessee ballot by putting in your name and birthday <a href='https://tnmap.tn.gov/voterlookup/'>here</a>. If it hasn't been received, the same site will tell you where to cast an in-person provisional ballot. If your ballot is not received by election day, it will be thrown out, even if you mailed it in on time." },
+			"Texas": { "text": "You are at severe risk of having your ballot thrown out by a bad court decision even if it was accepted. You can cast an in-person provisional ballot following the instructions <a href='https://teamrv-mvp.sos.texas.gov/MVP/mvp.do'>here</a>." },
+			"Utah": { "text": "You can check the status of your Utah ballot by putting in your name, birthday, and address <a href='https://votesearch.utah.gov/voter-search/search/search-by-voter/track-mail-ballot'>here</a>. If it hasn't been received, follow instructions on the site or <a href='https://voteinfo.utah.gov/county-clerk-contact-information/'>contact your local county clerk</a>. Your ballot is vulnerable to being thrown out by a bad court decision." },
+			"Vermont": { "text": "You can check the status of your Vermont ballot by putting in your name, birthday, and ID or social security number <a href='https://mvp.vermont.gov/'>here</a>. If it hasn't been received, follow instructions on the site. Your mail-in ballot will be thrown out if it is not received by election day, even if you mailed it in on time." },
+			"Virginia": { "text": "You can check the status of your Virginia ballot by putting in your name, birthday, and mailing address <a href='https://ballotscout.org/partners/5a8f1161-23a0-4fa0-8ec9-3e090e97e9b3/va-search'>here</a>. If it hasn't been received, follow instructions on the site.  Your mail-in ballot will be thrown out if it is not received by November 6th, even if you mailed it in on time, and even if it is received in time but after election day, it's still vulnerable to being thrown out by a bad court decision." },
+			"Washington": { "text": "Okay, Washington always votes by mail, you're probably fine. But you can check on your ballot <a href='https://voter.votewa.gov/WhereToVote.aspx'>here</a>." },
+			"District Of Columbia": { "text": "You can check the status of your D.C. ballot by putting in your name and birthday <a href='https://www.dcboe.org/Voters/Absentee-Voting/Track-Absentee-Ballot'>here</a>. If it hasn't been received, you can cast an in-person provisional ballot at your <a href='https://dcgis.maps.arcgis.com/apps/instant/nearby/index.html?appid=763576faa0b1470ca0559c377cf3b497'>polling place.</a> Your mail-in ballot will be thrown out if it is not received by November 13th, even if you mailed it in on time, and even if it is received in time but after election day, it's still vulnerable to being thrown out by a bad court decision." },
+			"West Virginia": { "text": "You can check the status of your West Virginia ballot by putting in your name and birthday <a href='https://services.sos.wv.gov/Elections/Voter/AbsenteeBallotTracking'>here</a>. If it hasn't been received, you can cast an in-person provisional ballot at your <a href='https://services.sos.wv.gov/Elections/Voter/FindMyPollingPlace'>polling place.</a> Your mail-in ballot will be thrown out if it is not received by November 9th, even if you mailed it in on time, and even if it is received in time but after election day, it's still vulnerable to being thrown out by a bad court decision." },
+			"Wisconsin": { "text": "You can check the status of your Wisconsin ballot by putting in your name and birthday <a href='https://myvote.wi.gov/en-us/TrackMyBallot'>here</a>. If it hasn't been received, follow instructions on the site. Your mail-in ballot will be thrown out if it is not received by election day, even if you mailed it in on time." },
+			"Wyoming": { "text": "Contact your <a href='https://sos.wyo.gov/Elections/Docs/WYCountyClerks_AbsRequest_VRChange.pdf'>local county clerk</a>. If you are concerned, you can cast an in-person provisional ballot <a href='https://sos.wyo.gov/elections/pollplace/default.aspx'>at your polling place</a>. Your mail-in ballot will be thrown out if it is not received by election day, even if you mailed it in on time." },
 
-function showInstructions() {
-	picker = document.getElementById("statepicker");
-	code = picker.options[picker.selectedIndex].value;
-	name = picker.options[picker.selectedIndex].text;
-	document.getElementById("info").innerHTML = `${$data_by_state[name]["text"]}`;
-}
-</script>
+
+		}
+
+		function showInstructions() {
+			picker = document.getElementById("statepicker");
+			code = picker.options[picker.selectedIndex].value;
+			name = picker.options[picker.selectedIndex].text;
+			document.getElementById("info").innerHTML = `${$data_by_state[name]["text"]}`;
+		}
+	</script>
 </head>
+
 <body>
 
-<h3>If you voted through the mail in the 2020 election, Republicans are filing lawsuits to have your ballot thrown out.</h3>
-<img src='25095906.jpg' alt='Is my ballot in danger?' style="height: 10vh" />
-<p>Your ballot is in the most danger if it hasn't been accepted by your state's voting office yet. If it hasn't, depending on which state you're in, you need to find a safe way to vote in person on November 3rd or contact your board of elections to fix your ballot.
-<p>Please use this tool to save your ballot!
+	<h3>If you voted through the mail in the 2020 election, Republicans are filing lawsuits to have your ballot thrown
+		out.</h3>
+	<img src='25095906.jpg' alt='Is my ballot in danger?' style="height: 10vh" />
+	<p>Your ballot is in the most danger if it hasn't been accepted by your state's voting office yet. If it hasn't,
+		depending on which state you're in, you need to find a safe way to vote in person on November 3rd or contact
+		your board of elections to fix your ballot.</p>
+	<p>Please use this tool to save your ballot!</p>
 
-<br>
-<form>
-<b>I'm registered to vote in</b> <select id='statepicker' onchange="showInstructions()">
-	<option value="">Please select:</option>
-	<option value="AL">Alabama</option>
-	<option value="AK">Alaska</option>
-	<option value="AZ">Arizona</option>
-	<option value="AR">Arkansas</option>
-	<option value="CA">California</option>
-	<option value="CO">Colorado</option>
-	<option value="CT">Connecticut</option>
-	<option value="DE">Delaware</option>
-	<option value="DC">District Of Columbia</option>
-	<option value="FL">Florida</option>
-	<option value="GA">Georgia</option>
-	<option value="HI">Hawaii</option>
-	<option value="ID">Idaho</option>
-	<option value="IL">Illinois</option>
-	<option value="IN">Indiana</option>
-	<option value="IA">Iowa</option>
-	<option value="KS">Kansas</option>
-	<option value="KY">Kentucky</option>
-	<option value="LA">Louisiana</option>
-	<option value="ME">Maine</option>
-	<option value="MD">Maryland</option>
-	<option value="MA">Massachusetts</option>
-	<option value="MI">Michigan</option>
-	<option value="MN">Minnesota</option>
-	<option value="MS">Mississippi</option>
-	<option value="MO">Missouri</option>
-	<option value="MT">Montana</option>
-	<option value="NE">Nebraska</option>
-	<option value="NV">Nevada</option>
-	<option value="NH">New Hampshire</option>
-	<option value="NJ">New Jersey</option>
-	<option value="NM">New Mexico</option>
-	<option value="NY">New York</option>
-	<option value="NC">North Carolina</option>
-	<option value="ND">North Dakota</option>
-	<option value="OH">Ohio</option>
-	<option value="OK">Oklahoma</option>
-	<option value="OR">Oregon</option>
-	<option value="PA">Pennsylvania</option>
-	<option value="RI">Rhode Island</option>
-	<option value="SC">South Carolina</option>
-	<option value="SD">South Dakota</option>
-	<option value="TN">Tennessee</option>
-	<option value="TX">Texas</option>
-	<option value="UT">Utah</option>
-	<option value="VT">Vermont</option>
-	<option value="VA">Virginia</option>
-	<option value="WA">Washington</option>
-	<option value="WV">West Virginia</option>
-	<option value="WI">Wisconsin</option>
-	<option value="WY">Wyoming</option>
-</select>
-</form>
+	<br>
+	<form>
+		<b>I'm registered to vote in</b> <select id='statepicker' onchange="showInstructions()">
+			<option value="">Please select:</option>
+			<option value="AL">Alabama</option>
+			<option value="AK">Alaska</option>
+			<option value="AZ">Arizona</option>
+			<option value="AR">Arkansas</option>
+			<option value="CA">California</option>
+			<option value="CO">Colorado</option>
+			<option value="CT">Connecticut</option>
+			<option value="DE">Delaware</option>
+			<option value="DC">District Of Columbia</option>
+			<option value="FL">Florida</option>
+			<option value="GA">Georgia</option>
+			<option value="HI">Hawaii</option>
+			<option value="ID">Idaho</option>
+			<option value="IL">Illinois</option>
+			<option value="IN">Indiana</option>
+			<option value="IA">Iowa</option>
+			<option value="KS">Kansas</option>
+			<option value="KY">Kentucky</option>
+			<option value="LA">Louisiana</option>
+			<option value="ME">Maine</option>
+			<option value="MD">Maryland</option>
+			<option value="MA">Massachusetts</option>
+			<option value="MI">Michigan</option>
+			<option value="MN">Minnesota</option>
+			<option value="MS">Mississippi</option>
+			<option value="MO">Missouri</option>
+			<option value="MT">Montana</option>
+			<option value="NE">Nebraska</option>
+			<option value="NV">Nevada</option>
+			<option value="NH">New Hampshire</option>
+			<option value="NJ">New Jersey</option>
+			<option value="NM">New Mexico</option>
+			<option value="NY">New York</option>
+			<option value="NC">North Carolina</option>
+			<option value="ND">North Dakota</option>
+			<option value="OH">Ohio</option>
+			<option value="OK">Oklahoma</option>
+			<option value="OR">Oregon</option>
+			<option value="PA">Pennsylvania</option>
+			<option value="RI">Rhode Island</option>
+			<option value="SC">South Carolina</option>
+			<option value="SD">South Dakota</option>
+			<option value="TN">Tennessee</option>
+			<option value="TX">Texas</option>
+			<option value="UT">Utah</option>
+			<option value="VT">Vermont</option>
+			<option value="VA">Virginia</option>
+			<option value="WA">Washington</option>
+			<option value="WV">West Virginia</option>
+			<option value="WI">Wisconsin</option>
+			<option value="WY">Wyoming</option>
+		</select>
+	</form>
 
-<span id="info"></span>
+	<span id="info"></span>
 
-<p>Much of this data is sourced from <a href="https://www.pcmag.com/how-to/how-to-track-your-absentee-ballot-by-state">Chandra Steele at PC Mag</a> and <a href="https://www.propublica.org/article/what-to-do-if-you-change-your-mind-about-voting-by-mail">ProPublica</a>.
+	<p>Much of this data is sourced from <a
+			href="https://www.pcmag.com/how-to/how-to-track-your-absentee-ballot-by-state">Chandra Steele at PC Mag</a>
+		and <a
+			href="https://www.propublica.org/article/what-to-do-if-you-change-your-mind-about-voting-by-mail">ProPublica</a>.
+	</p>
+	
+	<p>If any information here is incorrect, out of date, or incomplete, <a
+			href='https://github.com/histocrat/ballotInDanger/edit/main/index.html'>please submit a pull request!</a>
+	</p>
 
-<p>If any information here is incorrect, out of date, or incomplete, <a href='https://github.com/histocrat/ballotInDanger/edit/main/index.html'>please submit a pull request!</a>
+	<p>This page is released under the GPL license, so you can also just make your own copy.</p>
+	
+</body>
 
-<p>This page is released under the GPL license, so you can also just make your own copy.
