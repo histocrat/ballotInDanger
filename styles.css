@@ -1,0 +1,16 @@
+body {
+  background-color: #e9f2fd;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main {
+  flex: 1 1 auto;  /*grow vertically*/
+  padding-top: 1.5rem;
+}
+
+form {
+  max-width: 600px;
+}
