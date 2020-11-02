@@ -1,5 +1,5 @@
 # Ballot In Danger
-See it live at ballotindanger.com
+See the site live at [ballotindanger.com](http://ballotindanger.com/)
 
 If you voted through the mail in the 2020 election, Republicans are filing lawsuits to have your ballot thrown out.
 
